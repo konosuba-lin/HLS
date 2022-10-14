@@ -1,0 +1,8 @@
+INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2022.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'user' on host 'desktop-h2meuod' (Windows NT_amd64 version 6.2) on Fri Oct 14 18:10:32 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/user/Desktop/HLS/labA_vitis/labA-4/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 2.29 seconds; peak allocated memory: 0.719 MB.

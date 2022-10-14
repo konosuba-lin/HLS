@@ -1,0 +1,167 @@
+
+
+================================================================
+== Vitis HLS Report for 'adders'
+================================================================
+* Date:           Thu Oct 13 15:50:27 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        labA-1
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.25 ns|  2.028 ns|     0.88 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        5|        5|  16.250 ns|  16.250 ns|    6|    6|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.02>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%in1_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %in1" [../course-labA/Interface_Synthesis/lab1/adders.c:47]   --->   Operation 7 'read' 'in1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [5/5] (2.02ns)   --->   "%mul_ln50 = mul i32 %in1_read, i32 1433517753" [../course-labA/Interface_Synthesis/lab1/adders.c:50]   --->   Operation 8 'mul' 'mul_ln50' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 2.02>
+ST_2 : Operation 9 [4/5] (2.02ns)   --->   "%mul_ln50 = mul i32 %in1_read, i32 1433517753" [../course-labA/Interface_Synthesis/lab1/adders.c:50]   --->   Operation 9 'mul' 'mul_ln50' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 2.02>
+ST_3 : Operation 10 [3/5] (2.02ns)   --->   "%mul_ln50 = mul i32 %in1_read, i32 1433517753" [../course-labA/Interface_Synthesis/lab1/adders.c:50]   --->   Operation 10 'mul' 'mul_ln50' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 2.02>
+ST_4 : Operation 11 [2/5] (2.02ns)   --->   "%mul_ln50 = mul i32 %in1_read, i32 1433517753" [../course-labA/Interface_Synthesis/lab1/adders.c:50]   --->   Operation 11 'mul' 'mul_ln50' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 2.02>
+ST_5 : Operation 12 [1/5] (2.02ns)   --->   "%mul_ln50 = mul i32 %in1_read, i32 1433517753" [../course-labA/Interface_Synthesis/lab1/adders.c:50]   --->   Operation 12 'mul' 'mul_ln50' <Predicate = true> <Delay = 2.02> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 4> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 0.90>
+ST_6 : Operation 13 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 13 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 14 [1/1] (0.00ns)   --->   "%spectopmodule_ln47 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [../course-labA/Interface_Synthesis/lab1/adders.c:47]   --->   Operation 14 'spectopmodule' 'spectopmodule_ln47' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln47 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_2, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0" [../course-labA/Interface_Synthesis/lab1/adders.c:47]   --->   Operation 15 'specinterface' 'specinterface_ln47' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 16 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %in1"   --->   Operation 16 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %in1, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 18 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %in2"   --->   Operation 18 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %in2, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 20 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %in3"   --->   Operation 20 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %in3, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%in3_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %in3" [../course-labA/Interface_Synthesis/lab1/adders.c:47]   --->   Operation 22 'read' 'in3_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%in2_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %in2" [../course-labA/Interface_Synthesis/lab1/adders.c:47]   --->   Operation 23 'read' 'in2_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 24 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln50 = add i32 %in2_read, i32 %in3_read" [../course-labA/Interface_Synthesis/lab1/adders.c:50]   --->   Operation 24 'add' 'add_ln50' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.45> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 25 [1/1] (0.90ns) (root node of TernaryAdder)   --->   "%sum = add i32 %add_ln50, i32 %mul_ln50" [../course-labA/Interface_Synthesis/lab1/adders.c:50]   --->   Operation 25 'add' 'sum' <Predicate = true> <Delay = 0.90> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.45> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 26 [1/1] (0.00ns)   --->   "%ret_ln51 = ret i32 %sum" [../course-labA/Interface_Synthesis/lab1/adders.c:51]   --->   Operation 26 'ret' 'ret_ln51' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.25ns, clock uncertainty: 0.877ns.
+
+ <State 1>: 2.03ns
+The critical path consists of the following:
+	wire read operation ('in1', ../course-labA/Interface_Synthesis/lab1/adders.c:47) on port 'in1' (../course-labA/Interface_Synthesis/lab1/adders.c:47) [15]  (0 ns)
+	'mul' operation ('mul_ln50', ../course-labA/Interface_Synthesis/lab1/adders.c:50) [16]  (2.03 ns)
+
+ <State 2>: 2.03ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln50', ../course-labA/Interface_Synthesis/lab1/adders.c:50) [16]  (2.03 ns)
+
+ <State 3>: 2.03ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln50', ../course-labA/Interface_Synthesis/lab1/adders.c:50) [16]  (2.03 ns)
+
+ <State 4>: 2.03ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln50', ../course-labA/Interface_Synthesis/lab1/adders.c:50) [16]  (2.03 ns)
+
+ <State 5>: 2.03ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln50', ../course-labA/Interface_Synthesis/lab1/adders.c:50) [16]  (2.03 ns)
+
+ <State 6>: 0.907ns
+The critical path consists of the following:
+	wire read operation ('in3', ../course-labA/Interface_Synthesis/lab1/adders.c:47) on port 'in3' (../course-labA/Interface_Synthesis/lab1/adders.c:47) [13]  (0 ns)
+	'add' operation ('add_ln50', ../course-labA/Interface_Synthesis/lab1/adders.c:50) [17]  (0 ns)
+	'add' operation ('sum', ../course-labA/Interface_Synthesis/lab1/adders.c:50) [18]  (0.907 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

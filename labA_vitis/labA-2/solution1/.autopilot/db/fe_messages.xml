@@ -1,0 +1,15 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/user/Desktop/HLS/labA_vitis/labA-2/solution1/csynth.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="adders_io" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=adders_io" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../course-labA/Interface_Synthesis/lab2/adders_io.c:49:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="adders_io" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=ap_hs port=in_out1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../course-labA/Interface_Synthesis/lab2/adders_io.c:50:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="adders_io" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=ap_vld port=in2" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../course-labA/Interface_Synthesis/lab2/adders_io.c:51:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="adders_io" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=ap_vld port=in1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

@@ -1,0 +1,5 @@
+<pragmas>
+<pragma file="../course-labA/Interface_Synthesis/lab2/adders_io.c" line="49" pragmaType="interface" parentfunction="adders_io" mode="ap_hs" port="in_out1" name="" register="0"/>
+<pragma file="../course-labA/Interface_Synthesis/lab2/adders_io.c" line="50" pragmaType="interface" parentfunction="adders_io" mode="ap_vld" port="in2" name="" register="0"/>
+<pragma file="../course-labA/Interface_Synthesis/lab2/adders_io.c" line="51" pragmaType="interface" parentfunction="adders_io" mode="ap_vld" port="in1" name="" register="0"/>
+</pragmas>

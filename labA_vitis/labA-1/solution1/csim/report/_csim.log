@@ -1,0 +1,25 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../../labA/Interface_Synthesis/lab1/adders_test.c in debug mode
+INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2022.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'user' on host 'desktop-h2meuod' (Windows NT_amd64 version 6.2) on Thu Oct 13 13:37:04 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/user/Desktop/HLS/labA_vitis/labA-1/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 4.972 seconds; peak allocated memory: 0.613 MB.
+   Compiling(apcc) ../../../../../labA/Interface_Synthesis/lab1/adders.c in debug mode
+INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2022.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'user' on host 'desktop-h2meuod' (Windows NT_amd64 version 6.2) on Thu Oct 13 13:37:10 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/user/Desktop/HLS/labA_vitis/labA-1/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 3.395 seconds; peak allocated memory: 0.504 MB.
+   Generating csim.exe
+  10+20+30=60 
+  20+30+40=90 
+  30+40+50=120 
+  40+50+60=150 
+  50+60+70=180 
+----------Pass!------------
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

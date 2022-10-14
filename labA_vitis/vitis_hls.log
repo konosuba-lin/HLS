@@ -1,0 +1,51 @@
+INFO: [HLS 200-10] Running 'Z:/Xilinx/Vitis_HLS/2022.1/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'user' on host 'desktop-h2meuod' (Windows NT_amd64 version 6.2) on Fri Oct 14 18:39:42 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/user/Desktop/HLS/labA_vitis'
+Sourcing Tcl script 'C:/Users/user/Desktop/HLS/labA_vitis/labA-4/solution1/export.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/user/Desktop/HLS/labA_vitis/labA-4/solution1/export.tcl
+INFO: [HLS 200-1510] Running: open_project labA-4 
+INFO: [HLS 200-10] Opening project 'C:/Users/user/Desktop/HLS/labA_vitis/labA-4'.
+INFO: [HLS 200-1510] Running: set_top axi_interfaces 
+INFO: [HLS 200-1510] Running: add_files ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c 
+INFO: [HLS 200-10] Adding design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' to the project
+INFO: [HLS 200-1510] Running: add_files ../course-labA/Interface_Synthesis/lab4/axi_interfaces.h 
+INFO: [HLS 200-10] Adding design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../course-labA/Interface_Synthesis/lab4/axi_interfaces_test.c 
+INFO: [HLS 200-10] Adding test bench file '../course-labA/Interface_Synthesis/lab4/axi_interfaces_test.c' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../course-labA/Interface_Synthesis/lab4/result.golden.dat 
+INFO: [HLS 200-10] Adding test bench file '../course-labA/Interface_Synthesis/lab4/result.golden.dat' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/user/Desktop/HLS/labA_vitis/labA-4/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 8 axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_top -name axi_interfaces axi_interfaces 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -rewind axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite axi_interfaces 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'Z:/Xilinx/Vivado/2022.1/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 14 18:39:54 2022...
+INFO: [HLS 200-802] Generated output file labA-4/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 9.933 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 12.494 seconds; peak allocated memory: 1.449 GB.

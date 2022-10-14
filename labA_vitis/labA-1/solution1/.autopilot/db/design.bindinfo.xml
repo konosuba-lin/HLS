@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op mul" ID="" IMPL="auto" LATENCY="4" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32ns_32_5_1_U1" SOURCE="../course-labA/Interface_Synthesis/lab1/adders.c:50" VARIABLE="mul_ln50" MODULE="adders" LOOP="" BUNDLEDNAME="" DSP="3" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op all" ID="" IMPL="tadder" LATENCY="0" OPTYPE="all" PRAGMA="" RTLNAME="add_ln50_fu_52_p2" SOURCE="../course-labA/Interface_Synthesis/lab1/adders.c:50" VARIABLE="add_ln50" MODULE="adders" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op all" ID="" IMPL="tadder" LATENCY="0" OPTYPE="all" PRAGMA="" RTLNAME="ap_return" SOURCE="../course-labA/Interface_Synthesis/lab1/adders.c:50" VARIABLE="sum" MODULE="adders" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

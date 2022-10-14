@@ -1,0 +1,13 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_axi_s_d_i.v"
+sv xil_defaultlib "AESL_axi_s_d_o.v"
+sv xil_defaultlib "AESL_deadlock_idx0_monitor.v"
+sv xil_defaultlib "AESL_deadlock_kernel_monitor_top.v"
+sv xil_defaultlib "AESL_fifo.v"
+sv xil_defaultlib "axi_interfaces.autotb.v"
+sv xil_defaultlib "axi_interfaces.v"
+sv xil_defaultlib "axi_interfaces_acc_RAM_AUTO_1R1W.v"
+sv xil_defaultlib "axi_interfaces_flow_control_loop_pipe.v"
+sv xil_defaultlib "axi_interfaces_regslice_both.v"
+sv xil_defaultlib "dataflow_monitor.sv"
+

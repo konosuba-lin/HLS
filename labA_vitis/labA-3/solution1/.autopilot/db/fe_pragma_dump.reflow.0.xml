@@ -1,0 +1,7 @@
+<pragmas>
+<pragma file="../course-labA/Interface_Synthesis/lab3/array_io.c" line="7" pragmaType="unroll" parentfunction="array_io" factor="-1" skip_exit_check="0"/>
+<pragma file="../course-labA/Interface_Synthesis/lab3/array_io.c" line="10" pragmaType="interface" parentfunction="array_io" mode="ap_memory" port="d_o" storage_type="666" impl="207" latency="-1" name="" depth="-1"/>
+<pragma file="../course-labA/Interface_Synthesis/lab3/array_io.c" line="11" pragmaType="interface" parentfunction="array_io" mode="ap_memory" port="d_i" storage_type="666" impl="207" latency="-1" name="" depth="-1"/>
+<pragma file="../course-labA/Interface_Synthesis/lab3/array_io.c" line="8" pragmaType="array_partition" parentfunction="array_io" dim="1" factor="0" mode="complete" dynamic="0" variable="d_o"/>
+<pragma file="../course-labA/Interface_Synthesis/lab3/array_io.c" line="9" pragmaType="array_partition" parentfunction="array_io" dim="1" factor="0" mode="complete" dynamic="0" variable="d_i"/>
+</pragmas>

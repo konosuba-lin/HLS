@@ -1,0 +1,619 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register_mode both -register axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register_mode both -register axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-10] Analyzing design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.605 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:64:12) in function 'axi_interfaces' partially with a factor of 4 (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.41 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.003 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 1.448 GB.
+INFO: [XFORM 203-510] Pipelining loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:58) in function 'axi_interfaces' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.049 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-472] Inferring partial write operation for 'acc' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66:12)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.043 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'axi_interfaces' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'For_Loop'.
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between axis read operation ('d_i_read_1', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between axis read operation ('d_i_read_2', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between axis read operation ('d_i_read_3', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'For_Loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.126 seconds; current allocated memory: 1.448 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'axi_interfaces' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'axi_interfaces' pipeline 'For_Loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'axi_interfaces'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.089 seconds; current allocated memory: 1.448 GB.
+INFO: [RTMG 210-278] Implementing memory 'axi_interfaces_acc_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.306 seconds; current allocated memory: 1.448 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.278 seconds; current allocated memory: 1.448 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for axi_interfaces.
+INFO: [VLOG 209-307] Generating Verilog RTL for axi_interfaces.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 534.19 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 7.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 9.613 seconds; peak allocated memory: 1.448 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register_mode both -register axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register_mode both -register axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] Analyzing design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.526 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:64:12) in function 'axi_interfaces' partially with a factor of 4 (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.271 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.004 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.014 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 1.450 GB.
+INFO: [XFORM 203-510] Pipelining loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:58) in function 'axi_interfaces' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-472] Inferring partial write operation for 'acc' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66:12)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.023 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'axi_interfaces' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'For_Loop'.
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between axis read operation ('d_i_read_1', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between axis read operation ('d_i_read_2', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between axis read operation ('d_i_read_3', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'For_Loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.103 seconds; current allocated memory: 1.450 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'axi_interfaces' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'axi_interfaces' pipeline 'For_Loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'axi_interfaces'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.069 seconds; current allocated memory: 1.450 GB.
+INFO: [RTMG 210-278] Implementing memory 'axi_interfaces_acc_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.335 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.268 seconds; current allocated memory: 1.450 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for axi_interfaces.
+INFO: [VLOG 209-307] Generating Verilog RTL for axi_interfaces.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 534.19 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.759 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 9.296 seconds; peak allocated memory: 1.450 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register_mode both -register axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register_mode both -register axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: cosim_design -trace_level all 
+WARNING: [HLS 200-626] This design is unable to schedule all read ports in the first II cycle. The RTL testbench may treat the design as non-pipelined
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 22.767 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 25.252 seconds; peak allocated memory: 1.450 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register_mode both -register axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register_mode both -register axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] Analyzing design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.524 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:64:12) in function 'axi_interfaces' partially with a factor of 4 (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.175 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.003 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.022 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.452 GB.
+INFO: [XFORM 203-510] Pipelining loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:58) in function 'axi_interfaces' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.036 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-472] Inferring partial write operation for 'acc' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66:12)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.024 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'axi_interfaces' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'For_Loop'.
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between axis read operation ('d_i_read_1', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between axis read operation ('d_i_read_2', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between axis read operation ('d_i_read_3', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'For_Loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 1.452 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'axi_interfaces' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'axi_interfaces' pipeline 'For_Loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'axi_interfaces'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.069 seconds; current allocated memory: 1.452 GB.
+INFO: [RTMG 210-278] Implementing memory 'axi_interfaces_acc_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.258 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 1.452 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for axi_interfaces.
+INFO: [VLOG 209-307] Generating Verilog RTL for axi_interfaces.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 534.19 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.586 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 9.074 seconds; peak allocated memory: 1.452 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 8 axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register -register_mode both axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register -register_mode both axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_top -name axi_interfaces axi_interfaces 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] Analyzing design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.515 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:64:12) in function 'axi_interfaces' partially with a factor of 8 (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.265 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.003 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.035 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 1.452 GB.
+INFO: [XFORM 203-510] Pipelining loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:58) in function 'axi_interfaces' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.041 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'axi_interfaces' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'For_Loop'.
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between axis read operation ('d_i_read_1', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between axis read operation ('d_i_read_2', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between axis read operation ('d_i_read_3', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between axis read operation ('d_i_read_4', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+WARNING: [HLS 200-880] The II Violation in module 'axi_interfaces' (loop 'For_Loop'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between axis read operation ('d_i_read_7', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) and axis read operation ('d_i_read', ../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66) on port 'd_i' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:66).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'For_Loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.187 seconds; current allocated memory: 1.452 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.083 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'axi_interfaces' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'acc_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_7' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'axi_interfaces'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.115 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.242 seconds; current allocated memory: 1.452 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.268 seconds; current allocated memory: 1.452 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for axi_interfaces.
+INFO: [VLOG 209-307] Generating Verilog RTL for axi_interfaces.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 624.22 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 6.841 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 9.314 seconds; peak allocated memory: 1.452 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register -register_mode both axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register -register_mode both axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_top -name axi_interfaces axi_interfaces 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -dim 1 -factor 8 -type cyclic axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -dim 1 -factor 8 -type cyclic axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] Analyzing design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.516 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:64:12) in function 'axi_interfaces' completely with a factor of 32 (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 214-248] Applying array_partition to 'd_o': Cyclic partitioning with factor 8 on dimension 1. (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 214-248] Applying array_partition to 'd_i': Cyclic partitioning with factor 8 on dimension 1. (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_0' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_1' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_2' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_3' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_4' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_5' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_6' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_7' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_0' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_1' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_2' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_3' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_4' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_5' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_6' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_7' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.284 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.003 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.022 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.017 seconds; current allocated memory: 1.450 GB.
+INFO: [XFORM 203-11] Balancing expressions in function 'axi_interfaces' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:1)...32 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.097 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.052 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'axi_interfaces' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.202 seconds; current allocated memory: 1.450 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.125 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_0' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_1' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_2' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_3' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_4' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_5' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_6' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_7' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_0' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_1' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_2' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_3' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_4' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_5' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_6' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_7' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'axi_interfaces' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'acc_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_7' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'axi_interfaces'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.323 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.858 seconds; current allocated memory: 1.450 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.455 seconds; current allocated memory: 1.450 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for axi_interfaces.
+INFO: [VLOG 209-307] Generating Verilog RTL for axi_interfaces.
+INFO: [HLS 200-789] **** Estimated Fmax: 445.77 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 8.009 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 1 seconds. Total elapsed time: 10.52 seconds; peak allocated memory: 1.450 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register -register_mode both axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register -register_mode both axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_top -name axi_interfaces axi_interfaces 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -rewind axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 1.451 GB.
+INFO: [HLS 200-10] Analyzing design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.522 seconds; current allocated memory: 1.451 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+ERROR: [HLS 214-274] In 'For_Loop', Pragma conflict happens on 'UNROLL' and 'PIPELINE' pragmas: Complete unroll will break the target of other loop pragmas (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:64:12)
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.019 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 6.509 seconds; peak allocated memory: 1.451 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_top -name axi_interfaces axi_interfaces 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -rewind axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite axi_interfaces 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-10] Analyzing design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.695 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+ERROR: [HLS 214-274] In 'For_Loop', Pragma conflict happens on 'UNROLL' and 'PIPELINE' pragmas: Complete unroll will break the target of other loop pragmas (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:64:12)
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.829 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 6.351 seconds; peak allocated memory: 1.449 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 8 axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_top -name axi_interfaces axi_interfaces 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -rewind axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite axi_interfaces 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-10] Analyzing design file '../course-labA/Interface_Synthesis/lab4/axi_interfaces.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.534 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:64:12) in function 'axi_interfaces' partially with a factor of 8 (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 214-248] Applying array_partition to 'd_o': Cyclic partitioning with factor 8 on dimension 1. (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 214-248] Applying array_partition to 'd_i': Cyclic partitioning with factor 8 on dimension 1. (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_0' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_1' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_2' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_3' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_4' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_5' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_6' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_o_7' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_0' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_1' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_2' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_3' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_4' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_5' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_6' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'd_i_7' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:57:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.316 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.004 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.019 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.014 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.064 seconds; current allocated memory: 1.449 GB.
+INFO: [XFORM 203-531] Rewinding loop 'For_Loop' (../course-labA/Interface_Synthesis/lab4/axi_interfaces.c:58) in function 'axi_interfaces'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'axi_interfaces' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'For_Loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'For_Loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.108 seconds; current allocated memory: 1.449 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'axi_interfaces' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_0' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_1' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_2' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_3' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_4' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_5' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_6' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_o_7' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_0' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_1' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_2' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_3' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_4' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_5' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_6' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'axi_interfaces/d_i_7' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'axi_interfaces' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'acc_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'acc_7' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'axi_interfaces'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.145 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.504 seconds; current allocated memory: 1.449 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.525 seconds; current allocated memory: 1.449 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for axi_interfaces.
+INFO: [VLOG 209-307] Generating Verilog RTL for axi_interfaces.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 624.22 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 7.41 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 9.927 seconds; peak allocated memory: 1.449 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flgb2104-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcvu9p-flgb2104-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 4 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-1510] Running: source ./labA-4/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 main/main_label2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 8 axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode axis -register axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_top -name axi_interfaces axi_interfaces 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_o 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 8 -dim 1 axi_interfaces d_i 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -rewind axi_interfaces/For_Loop 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite axi_interfaces 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file labA-4/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 9.933 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 12.494 seconds; peak allocated memory: 1.449 GB.
